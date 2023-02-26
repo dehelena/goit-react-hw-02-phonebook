@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { FilterStyled } from "./FilterStyled";
 
 export const Filter = ({ value, getFilteredFriend }) => {
@@ -15,3 +16,8 @@ export const Filter = ({ value, getFilteredFriend }) => {
     </FilterStyled>
   );
 };
+
+Filter.propTypes = {
+  value: PropTypes.string.isRequired,
+  getFilteredFriend: PropTypes.func.isRequired,
+}

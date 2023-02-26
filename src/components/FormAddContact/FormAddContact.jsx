@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { nanoid } from 'nanoid';
 import { StyledFormAddContacts } from './FormAddContact.styled';
 
 class FormAddContact extends Component {
