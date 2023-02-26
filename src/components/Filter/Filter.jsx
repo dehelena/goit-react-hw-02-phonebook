@@ -1,7 +1,9 @@
+import { FilterStyled } from "./FilterStyled";
+
 export const Filter = ({ value, getFilteredFriend }) => {
   return (
-    <>
-      <label>
+      <FilterStyled>
+    <label>
         Find contacts by name
         <input
           type="text"
@@ -10,6 +12,6 @@ export const Filter = ({ value, getFilteredFriend }) => {
           onChange={getFilteredFriend}
         />
       </label>
-    </>
+    </FilterStyled>
   );
 };

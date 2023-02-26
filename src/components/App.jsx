@@ -1,12 +1,12 @@
 import { nanoid } from 'nanoid';
 import React, { Component } from 'react';
-import { createContext } from 'react';
 import { ContactList } from './ContactsList/ContactsList';
-import { Filter } from './Filter/Filter';
 import FormAddContact from './FormAddContact/FormAddContact';
 import { Notify } from 'notiflix';
+import { StyledTitle } from './TitleStyled';
+import { Filter } from './Filter/Filter';
 
-class App extends Component {
+class App extends Component { 
   state = {
     contacts: [
       { id: 'id-1', name: 'Rosie', number: '459-12-56' },
@@ -21,14 +21,7 @@ class App extends Component {
     // console.log(contact);
     if (this.state.contacts.some(el => el.name === contact.name)) {
       Notify.warning(
-        `${contact.name} is already in contact list. Please add another one`
-      );
-      return;
-    }
-
-    if (this.state.contacts.some(el => el.number === contact.number)) {
-      Notify.warning(
-        `${contact.number} is already in contact list. Please add another one`
+        `${contact.name} is already in contact list.`
       );
       return;
     }
@@ -63,12 +56,11 @@ class App extends Component {
   };
 
   render() {
-    // const filteredContacts = this.getFilteredContact();
     return (
       <div>
-        <h2>Phonebook</h2>
+        <StyledTitle>Phonebook</StyledTitle>
         <FormAddContact onAddContact={this.onAddContact} />
-        <h2>Contacts</h2>
+        <StyledTitle>Contacts</StyledTitle>
         <Filter value={this.state.filter} getFilteredFriend={this.changeFilter} />
         <ContactList
           contacts={this.getFilteredContact()}

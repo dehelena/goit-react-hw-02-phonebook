@@ -1,39 +1,27 @@
 import React from 'react';
-import { nanoid } from 'nanoid';
+import { ContactStyled } from './ContactsStyled';
 
 export const ContactList = ({ contacts, onDeleteContact }) => {
   return (
-    <ul>
+    <ContactStyled>
       {contacts.map(contact => {
         return (
-          <li key={contact.id}>
+          <li key={contact.id} className="contactItem">
             <span>{contact.name} </span>
             <span> {contact.number} </span>
             <button type="button" onClick={() => onDeleteContact(contact.id)}>
-              Delete contact
+              Delete
             </button>
           </li>
         );
       })}
-    </ul>
+    </ContactStyled>
   );
 };
 
-// function ProductList({ products, onDeleteProduct }) {
-//   return (
-//     <div >
-//        {products.map((product) => {
-//           return (
-//               <Product
-//                 key={product.id}
-//                 id={product.id}
-//                 discount={product.discount}
-//                 title={product.title}
-//                 price={product.price}
-//                 onDeleteProduct={onDeleteProduct}
-//               />
-//           );
-//         })}
-//     </div>
-//   );
+
+// ContactList.propTypes = {
+//   contacts: PropTypes.arrayOf(
+    
+//   ).isRequired,
 // }
