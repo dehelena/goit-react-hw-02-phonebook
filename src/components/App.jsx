@@ -55,10 +55,6 @@ class App extends Component {
     })
   };
 
-  componentDidMount() {
-  console.log('App Component did mount');
-}
-
   render() {
     return (
       <div>
